@@ -1,14 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Test</title>
+<title>ENSO Dashboard</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#eef2f5;
+    margin:0;
+}
+
+header{
+    background:#0b2a4a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    text-align:center;
+}
+
+.placeholder{
+    height:200px;
+    background:#d9e2ec;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#555;
+    font-size:18px;
+}
+</style>
 </head>
 
-<body style="font-family:Arial; background:#f0f0f0; padding:40px;">
+<body>
 
-<h1>Vercel Test Page</h1>
+<header>
+<h1>ENSO Dashboard</h1>
+<p>Climate Monitoring Overview</p>
+</header>
 
-<p>If you can see this text, Vercel is working correctly.</p>
+<div class="container">
+
+<div class="card">
+<h3>ENSO Regions</h3>
+<div class="placeholder">ENSO Regions Image</div>
+</div>
+
+<div class="card">
+<h3>Walker Circulation</h3>
+<div class="placeholder">Walker Circulation Image</div>
+</div>
+
+<div class="card">
+<h3>Sea Surface Temperature</h3>
+<div class="placeholder">SST Anomaly Image</div>
+</div>
+
+<div class="card">
+<h3>ENSO Cycle</h3>
+<div class="placeholder">ENSO Cycle Image</div>
+</div>
+
+</div>
 
 </body>
 </html>
