@@ -8,58 +8,81 @@
 <style>
 body{
     font-family: Arial, sans-serif;
+    margin:0;
     background:#f4f4f4;
-    margin:20px;
 }
 
-h1{
+header{
+    background:#1e3a5f;
+    color:white;
+    padding:20px;
     text-align:center;
 }
 
-.grid{
+.container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:15px;
+    padding:15px;
 }
 
 .card{
     background:white;
-    padding:15px;
     border-radius:10px;
+    padding:10px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    text-align:center;
 }
 
 img{
     width:100%;
     border-radius:8px;
+    display:block;
+}
+
+.note{
+    text-align:center;
+    font-size:12px;
+    color:#666;
+    margin-top:5px;
 }
 </style>
 </head>
 
 <body>
 
+<header>
 <h1>ENSO Dashboard</h1>
+<p>Ocean–Atmosphere Monitoring Overview</p>
+</header>
 
-<div class="grid">
+<div class="container">
 
 <div class="card">
 <h3>ENSO Regions</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/ENSO_Regions.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/ENSO_Regions.png" alt="ENSO Regions">
+<div class="note">Niño 1+2, 3, 3.4, 4 regions</div>
 </div>
 
 <div class="card">
 <h3>Walker Circulation</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Walker_circulation.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Walker_circulation.png" alt="Walker Circulation">
+<div class="note">Atmospheric circulation across Pacific</div>
 </div>
 
 <div class="card">
-<h3>Sea Surface Temperature Anomalies</h3>
-<img src="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_update/sstanim.gif">
+<h3>Sea Surface Temperature</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Sea_surface_temperature_anomaly.png" alt="SST Anomaly">
+<div class="note">General SST anomaly pattern</div>
 </div>
 
 <div class="card">
-<h3>ENSO Forecast</h3>
-<img src="https://iri.columbia.edu/wp-content/uploads/sites/25/2024/05/ENSO-plume.png">
+<h3>ENSO Overview</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/El_Ni%C3%B1o-Southern_Oscillation_graph.png" alt="ENSO Cycle">
+<div class="note">El Niño / La Niña cycle overview</div>
 </div>
 
 </div>
