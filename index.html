@@ -8,7 +8,7 @@
 <style>
 body{
     margin:0;
-    font-family:Arial;
+    font-family: Arial, sans-serif;
     background:#eef2f5;
 }
 
@@ -19,33 +19,45 @@ header{
     text-align:center;
 }
 
+header h1{
+    margin:0;
+}
+
+header p{
+    margin:5px 0 0 0;
+    opacity:0.85;
+}
+
 .container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
     gap:15px;
     padding:15px;
 }
 
 .card{
     background:white;
-    border-radius:10px;
-    padding:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    border-radius:12px;
+    padding:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-h3{
+.card h3{
     text-align:center;
+    margin:10px 0;
 }
 
 img{
     width:100%;
-    border-radius:8px;
+    border-radius:10px;
+    display:block;
 }
 
 .note{
-    font-size:12px;
     text-align:center;
+    font-size:12px;
     color:#666;
+    margin-top:6px;
 }
 </style>
 </head>
@@ -61,23 +73,26 @@ img{
 
 <div class="card">
 <h3>ENSO Regions</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/ENSO_Regions.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/ENSO_Regions.png" alt="ENSO Regions">
+<div class="note">Niño regions of the Pacific</div>
 </div>
 
 <div class="card">
 <h3>Walker Circulation</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Walker_circulation.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Walker_circulation.png" alt="Walker Circulation">
+<div class="note">Atmospheric circulation pattern</div>
 </div>
 
 <div class="card">
 <h3>Sea Surface Temperature</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Sea_surface_temperature_anomaly.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Sea_surface_temperature_anomaly.png" alt="SST Anomaly">
+<div class="note">Global SST anomalies</div>
 </div>
 
 <div class="card">
-<h3>ENSO Cycle (Safe Diagram)</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/50/El_Ni%C3%B1o_La_Ni%C3%B1a_graph.svg">
-<div class="note">Stable ENSO cycle diagram</div>
+<h3>ENSO Cycle</h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/El_Ni%C3%B1o-Southern_Oscillation_graph.png" alt="ENSO Cycle">
+<div class="note">El Niño / La Niña phases</div>
 </div>
 
 </div>
