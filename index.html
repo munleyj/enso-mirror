@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>ENSO Dashboard</title>
 
 <style>
 body{
-    font-family:Arial;
+    font-family: Arial;
     background:#eef2f5;
     margin:0;
 }
@@ -13,37 +14,31 @@ body{
 header{
     background:#0b2a4a;
     color:white;
-    text-align:center;
     padding:20px;
+    text-align:center;
 }
 
 .container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
-    padding:20px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:15px;
+    padding:15px;
 }
 
 .card{
     background:white;
+    padding:10px;
     border-radius:10px;
-    padding:15px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-.card h3{
-    text-align:center;
+img{
+    width:100%;
+    border-radius:8px;
 }
 
-.placeholder{
-    height:200px;
-    background:#d9e2ec;
-    border-radius:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#555;
-    font-size:18px;
+h3{
+    text-align:center;
 }
 </style>
 </head>
@@ -59,22 +54,22 @@ header{
 
 <div class="card">
 <h3>ENSO Regions</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/ENSO_Regions.png" alt="ENSO Regions" style="width:100%; border-radius:8px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/ENSO_Regions.png">
 </div>
 
 <div class="card">
 <h3>Walker Circulation</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Walker_circulation.png" alt="Walker Circulation" style="width:100%; border-radius:8px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Walker_circulation.png">
 </div>
 
 <div class="card">
 <h3>Sea Surface Temperature</h3>
-https://chatgpt.com/c/6a060f1e-e0dc-83ea-9825-df0bb023ece1#:~:text=%3Cimg%20src%3D%22https%3A//upload.wikimedia.org/wikipedia/commons/6/6f/Sea_surface_temperature_anomaly.png%22%20alt%3D%22SST%22%20style%3D%22width%3A100%25%3B%20border%2Dradius%3A8px%3B%22%3E
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Sea_surface_temperature_anomaly.png">
 </div>
 
 <div class="card">
 <h3>ENSO Cycle</h3>
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/50/El_Ni%C3%B1o_La_Ni%C3%B1a_graph.svg">
 </div>
 
 </div>
