@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ENSO Dashboard</title>
+<title>ENSO Live Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
-    font-family: Arial;
     margin:0;
+    font-family: Arial, sans-serif;
     background:#eef2f5;
 }
 
 header{
     background:#0b2a4a;
     color:white;
-    padding:20px;
     text-align:center;
+    padding:20px;
 }
 
 .container{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:15px;
     padding:15px;
 }
@@ -28,7 +29,7 @@ header{
 .card{
     background:white;
     border-radius:10px;
-    padding:10px;
+    padding:15px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -36,9 +37,18 @@ h3{
     text-align:center;
 }
 
-img{
-    width:100%;
-    border-radius:8px;
+.value{
+    font-size:28px;
+    text-align:center;
+    margin:10px 0;
+    color:#0b2a4a;
+    font-weight:bold;
+}
+
+.small{
+    text-align:center;
+    font-size:12px;
+    color:#666;
 }
 </style>
 </head>
@@ -46,41 +56,88 @@ img{
 <body>
 
 <header>
-<h1>ENSO Dashboard</h1>
-<p>Climate Monitoring Overview</p>
+<h1>ENSO Live Dashboard</h1>
+<p>Real-time climate index (simulated live structure)</p>
 </header>
 
 <div class="container">
 
 <div class="card">
-<h3>ENSO Regions</h3>
-<div style="height:200px; background:#d9e2ec; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-ENSO Regions Diagram
-</div>
-</div>
-
-<div class="card">
-<h3>Walker Circulation</h3>
-<div style="height:200px; background:#d9e2ec; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-Walker Circulation Diagram
-</div>
+<h3>ENSO Status (Niño 3.4)</h3>
+<div class="value" id="ensoValue">Loading...</div>
+<div class="small">Updated automatically</div>
 </div>
 
 <div class="card">
-<h3>Sea Surface Temperature</h3>
-<div style="height:200px; background:#d9e2ec; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-SST Anomalies
-</div>
+<h3>Ocean State</h3>
+<div class="value" id="oceanState">Loading...</div>
+<div class="small">Based on ENSO index</div>
 </div>
 
 <div class="card">
-<h3>ENSO Cycle</h3>
-<div style="height:200px; background:#d9e2ec; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-ENSO Cycle Diagram
+<h3>Atmospheric Signal</h3>
+<div class="value" id="atmo">Loading...</div>
+<div class="small">Walker circulation strength</div>
 </div>
 
-
 </div>
+
+<script>
+// simple simulated live ENSO data (we can replace with NOAA API next)
+function updateENSO(){
+
+    let value = (Math.random()*3 - 1.5).toFixed(2);
+
+    document.getElementById("ensoValue").innerText = value;
+
+    let state = "Neutral";
+
+    if(value > 0.5) state = "El Niño";
+    if(value < -0.5) state = "La Niña";
+
+    document.getElementById("oceanState").innerText = state;
+
+    document.getElementById("atmo").innerText =
+        (Math.random() > 0.5 ? "Strong" : "Weak");
+
+}
+
+updateENSO();
+setInterval(updateENSO, 5000);
+</script>
 
 </body>
 </html>
+🚀 Step 2 — commit in GitHub
+Paste into index.html
+Click Commit changes
+⏳ Step 3 — wait
+30–60 seconds
+refresh Vercel
+💡 What you will now see
+
+Instead of grey boxes, you will get:
+
+ENSO numeric index (changes every 5 sec)
+El Niño / La Niña / Neutral label
+Atmospheric signal indicator
+🔥 What we just did (important)
+
+We upgraded you from:
+
+❌ static broken image dashboard
+to
+✅ live updating data dashboard (front-end simulation)
+
+👉 Next upgrade (if you want)
+
+We can connect real NOAA data next:
+
+CPC ENSO index
+real Niño 3.4 values
+real charts (not fake numbers)
+
+Just say:
+👉 “real data next”
+
+and I’ll take you there.
