@@ -81,48 +81,22 @@ img {
 <p>Climate Monitoring Overview</p>
 </header>
 
-<div class="container">
+<div class="card">
+  <h3>ENSO Status (Niño 3.4)</h3>
+  <div class="value" id="ensoValue">Loading...</div>
+  <div class="small">Updated automatically</div>
+</div>
 
-  <!-- ENSO Status -->
-  <div class="card">
-    <h3>ENSO Status (Niño 3.4)</h3>
-    <div class="value" id="ensoValue">Loading...</div>
-    <div class="small">Updated automatically</div>
-  </div>
+<div class="card">
+  <h3>Ocean State</h3>
+  <div class="value" id="oceanState">Loading...</div>
+  <div class="small">Based on ENSO index</div>
+</div>
 
-  <!-- Ocean State -->
-  <div class="card">
-    <h3>Ocean State</h3>
-    <div class="value" id="oceanState">Loading...</div>
-  </div>
-
-  <!-- Atmospheric Signal -->
-  <div class="card">
-    <h3>Atmospheric Signal</h3>
-    <div class="value" id="atmo">Loading...</div>
-  </div>
-
-  <!-- ENSO Regions -->
-  <div class="card">
-    <h3>ENSO Regions</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/ENSO_Regions.png" alt="ENSO Regions">
-    <div class="note">Niño regions of the Pacific</div>
-  </div>
-
-  <!-- Walker Circulation -->
-  <div class="card">
-    <h3>Walker Circulation</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Walker_circulation.png" alt="Walker Circulation">
-    <div class="note">Atmospheric circulation pattern</div>
-  </div>
-
-  <!-- Sea Surface Temperature -->
-  <div class="card">
-    <h3>Sea Surface Temperature</h3>
-    <img src="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_update/sstanim.gif" alt="SST Anomaly">
-    <div class="note">Global SST anomalies</div>
-  </div>
-
+<div class="card">
+  <h3>Atmospheric Signal</h3>
+  <div class="value" id="atmo">Loading...</div>
+  <div class="small">Walker circulation strength</div>
 </div>
 
 <script>
