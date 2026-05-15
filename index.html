@@ -86,20 +86,14 @@ h3{
 async function updateENSO(){
 
     try {
-        const url = "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt";
+        const url = "https://psl.noaa.gov/data/correlation/oni.data";
 
         const res = await fetch(url);
         const text = await res.text();
 
         const lines = text.trim().split("\n");
 
-        let lastLine = "";
-        for(let i = lines.length - 1; i >= 0; i--){
-            if(lines[i].match(/-?\d\.\d/)){
-                lastLine = lines[i];
-                break;
-            }
-        }
+        let lastLine = lines[lines.length - 1];
 
         const parts = lastLine.trim().split(/\s+/);
         const oni = parseFloat(parts[parts.length - 1]);
