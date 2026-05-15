@@ -86,17 +86,10 @@ h3{
 async function updateENSO(){
 
     try {
-        const url = "https://psl.noaa.gov/data/correlation/oni.data";
+        const res = await fetch("/api/enso");
+        const data = await res.json();
 
-        const res = await fetch(url);
-        const text = await res.text();
-
-        const lines = text.trim().split("\n");
-
-        let lastLine = lines[lines.length - 1];
-
-        const parts = lastLine.trim().split(/\s+/);
-        const oni = parseFloat(parts[parts.length - 1]);
+        const oni = data.oni;
 
         document.getElementById("ensoValue").innerText = oni.toFixed(2);
 
@@ -108,11 +101,13 @@ async function updateENSO(){
         document.getElementById("oceanState").innerText = state;
 
         document.getElementById("atmo").innerText =
-            oni > 0 ? "Weakened Walker Circulation" : "Strengthened Walker Circulation";
+            oni > 0
+                ? "Weakened Walker Circulation"
+                : "Strengthened Walker Circulation";
 
     } catch (e) {
         document.getElementById("ensoValue").innerText = "No Data";
-        document.getElementById("oceanState").innerText = "Error loading NOAA";
+        document.getElementById("oceanState").innerText = "Error loading API";
         document.getElementById("atmo").innerText = "N/A";
     }
 }
