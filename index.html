@@ -62,29 +62,30 @@ h3{
 
 <div class="container">
 
-<div class="card">
-<h3>ENSO Status (Niño 3.4)</h3>
-<div class="value" id="ensoValue">Loading...</div>
-<div class="small">Updated automatically</div>
-</div>
+<div class="container">
 
-<div class="card">
-<h3>Ocean State</h3>
-<div class="value" id="oceanState">Loading...</div>
-<div class="small">Based on ENSO index</div>
-</div>
+  <div class="card">
+    <h3>ENSO Status (Niño 3.4)</h3>
+    <div class="value" id="ensoValue">Loading...</div>
+    <div class="small">Updated automatically</div>
+  </div>
 
-<div class="card">
-<h3>Atmospheric Signal</h3>
-<div class="value" id="atmo">Loading...</div>
-<div class="small">Walker circulation strength</div>
+  <div class="card">
+    <h3>Ocean State</h3>
+    <div class="value" id="oceanState">Loading...</div>
+  </div>
+
+  <div class="card">
+    <h3>Atmospheric Signal</h3>
+    <div class="value" id="atmo">Loading...</div>
+  </div>
+
 </div>
 
 </div>
 
 <script>
-async function updateENSO(){
-
+async function updateENSO() {
     try {
         const res = await fetch("/api/enso");
         const data = await res.json();
@@ -94,9 +95,8 @@ async function updateENSO(){
         document.getElementById("ensoValue").innerText = oni.toFixed(2);
 
         let state = "Neutral";
-
-        if(oni >= 0.5) state = "El Niño";
-        if(oni <= -0.5) state = "La Niña";
+        if (oni >= 0.5) state = "El Niño";
+        if (oni <= -0.5) state = "La Niña";
 
         document.getElementById("oceanState").innerText = state;
 
@@ -115,5 +115,6 @@ async function updateENSO(){
 updateENSO();
 setInterval(updateENSO, 3600000);
 </script>
+
 </body>
 </html>
