@@ -83,27 +83,48 @@ h3{
 </div>
 
 <script>
-// simple simulated live ENSO data (we can replace with NOAA API next)
-function updateENSO(){
+async function updateENSO(){
 
-    let value = (Math.random()*3 - 1.5).toFixed(2);
+    try {
+        const url = "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt";
 
-    document.getElementById("ensoValue").innerText = value;
+        const res = await fetch(url);
+        const text = await res.text();
 
-    let state = "Neutral";
+        const lines = text.trim().split("\n");
 
-    if(value > 0.5) state = "El Niño";
-    if(value < -0.5) state = "La Niña";
+        let lastLine = "";
+        for(let i = lines.length - 1; i >= 0; i--){
+            if(lines[i].match(/-?\d\.\d/)){
+                lastLine = lines[i];
+                break;
+            }
+        }
 
-    document.getElementById("oceanState").innerText = state;
+        const parts = lastLine.trim().split(/\s+/);
+        const oni = parseFloat(parts[parts.length - 1]);
 
-    document.getElementById("atmo").innerText =
-        (Math.random() > 0.5 ? "Strong" : "Weak");
+        document.getElementById("ensoValue").innerText = oni.toFixed(2);
 
+        let state = "Neutral";
+
+        if(oni >= 0.5) state = "El Niño";
+        if(oni <= -0.5) state = "La Niña";
+
+        document.getElementById("oceanState").innerText = state;
+
+        document.getElementById("atmo").innerText =
+            oni > 0 ? "Weakened Walker Circulation" : "Strengthened Walker Circulation";
+
+    } catch (e) {
+        document.getElementById("ensoValue").innerText = "No Data";
+        document.getElementById("oceanState").innerText = "Error loading NOAA";
+        document.getElementById("atmo").innerText = "N/A";
+    }
 }
 
 updateENSO();
-setInterval(updateENSO, 5000);
+setInterval(updateENSO, 3600000);
 </script>
 
 </body>
