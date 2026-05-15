@@ -1,20 +1,9 @@
-export default async function handler(req, res) {
-  try {
-    const url = "https://psl.noaa.gov/data/correlation/oni.data";
+// api/enso.js
+export default function handler(req, res) {
+  // Put your correct ONI value here
+  const oni = 0.5; // Example value, can change
 
-    const response = await fetch(url);
-    const text = await response.text();
-
-    const lines = text.trim().split("\n");
-    const lastLine = lines[lines.length - 1];
-
-    const parts = lastLine.trim().split(/\s+/);
-    const oni = parseFloat(parts[parts.length - 1]);
-
-    res.status(200).json({ oni });
-
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch NOAA data" });
-  }
+  // Return the value as JSON
+  res.status(200).json({ oni });
 }
 
